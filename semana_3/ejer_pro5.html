@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes del Año</title>
+    <script>
+        function obtenerMes() {
+            // Obtener el valor ingresado por el usuario
+            var numero = parseInt(document.getElementById("numero").value, 10);
+            
+            // Verificar si el valor ingresado es un número válido
+            if (isNaN(numero) || numero < 1 || numero > 12) {
+                document.getElementById("resultado").textContent = "Por favor, ingresa un número del 1 al 12.";
+                return;
+            }
+
+            // Determinar el mes correspondiente usando switch
+            var mes;
+            switch (numero) {
+                case 1:
+                    mes = "Enero";
+                    break;
+                case 2:
+                    mes = "Febrero";
+                    break;
+                case 3:
+                    mes = "Marzo";
+                    break;
+                case 4:
+                    mes = "Abril";
+                    break;
+                case 5:
+                    mes = "Mayo";
+                    break;
+                case 6:
+                    mes = "Junio";
+                    break;
+                case 7:
+                    mes = "Julio";
+                    break;
+                case 8:
+                    mes = "Agosto";
+                    break;
+                case 9:
+                    mes = "Septiembre";
+                    break;
+                case 10:
+                    mes = "Octubre";
+                    break;
+                case 11:
+                    mes = "Noviembre";
+                    break;
+                case 12:
+                    mes = "Diciembre";
+                    break;
+                default:
+                    mes = "Número fuera de rango";
+                    break;
+            }
+
+            // Mostrar el resultado en la página
+            document.getElementById("resultado").textContent = "El mes correspondiente al número " + numero + " es " + mes + ".";
+        }
+    </script>
+</head>
+<body>
+    <h1>Determinar Mes del Año</h1>
+    <label for="numero">Ingresa un número del 1 al 12:</label>
+    <input type="number" id="numero">
+    <br>
+    <button onclick="obtenerMes()">Obtener Mes</button>
+    <p id="resultado"></p>
+</body>
+</html>

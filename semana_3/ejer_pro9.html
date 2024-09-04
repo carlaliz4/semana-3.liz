@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucle For</title>
+    <script>
+        function imprimirNumerosFor() {
+            var resultado = "";
+            for (var i = 1; i <= 10; i++) {
+                resultado += i + "<br>";
+            }
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+</head>
+<body onload="imprimirNumerosFor()">
+    <h1>Números del 1 al 10 usando for</h1>
+    <div id="resultado"></div>
+</body>
+</html>

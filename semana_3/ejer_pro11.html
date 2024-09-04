@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Producto</title>
+    <script>
+        function calcularProducto() {
+            // Obtener los valores ingresados por el usuario
+            var numero1 = parseFloat(document.getElementById("numero1").value);
+            var numero2 = parseFloat(document.getElementById("numero2").value);
+            
+            // Verificar si los valores son números válidos
+            if (isNaN(numero1) || isNaN(numero2)) {
+                document.getElementById("resultado").textContent = "Por favor, ingresa números válidos.";
+                return;
+            }
+
+            // Calcular el producto
+            var producto = numero1 * numero2;
+
+            // Mostrar el resultado en la página
+            document.getElementById("resultado").textContent = "El producto de " + numero1 + " y " + numero2 + " es " + producto + ".";
+        }
+    </script>
+</head>
+<body>
+    <h1>Calcular Producto de Dos Números</h1>
+    <label for="numero1">Número 1:</label>
+    <input type="number" id="numero1" step="any">
+    <br>
+    <label for="numero2">Número 2:</label>
+    <input type="number" id="numero2" step="any">
+    <br>
+    <button onclick="calcularProducto()">Calcular Producto</button>
+    <p id="resultado"></p>
+</body>
+</html>

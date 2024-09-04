@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día de la Semana</title>
+    <script>
+        function obtenerDia() {
+            // Obtener el valor ingresado por el usuario
+            var numero = parseInt(document.getElementById("numero").value, 10);
+            
+            // Verificar si el valor ingresado es un número válido del 1 al 7
+            if (isNaN(numero) || numero < 1 || numero > 7) {
+                document.getElementById("resultado").textContent = "Por favor, ingresa un número del 1 al 7.";
+                return;
+            }
+
+            // Determinar el día de la semana correspondiente usando switch
+            var dia;
+            switch (numero) {
+                case 1:
+                    dia = "Lunes";
+                    break;
+                case 2:
+                    dia = "Martes";
+                    break;
+                case 3:
+                    dia = "Miércoles";
+                    break;
+                case 4:
+                    dia = "Jueves";
+                    break;
+                case 5:
+                    dia = "Viernes";
+                    break;
+                case 6:
+                    dia = "Sábado";
+                    break;
+                case 7:
+                    dia = "Domingo";
+                    break;
+                default:
+                    dia = "Número fuera de rango"; // Esto no se debería ejecutar por la validación previa
+                    break;
+            }
+
+            // Mostrar el resultado en la página
+            document.getElementById("resultado").textContent = "El día correspondiente al número " + numero + " es " + dia + ".";
+        }
+    </script>
+</head>
+<body>
+    <h1>Determinar Día de la Semana</h1>
+    <label for="numero">Ingresa un número del 1 al 7:</label>
+    <input type="number" id="numero" min="1" max="7">
+    <br>
+    <button onclick="obtenerDia()">Obtener Día</button>
+    <p id="resultado"></p>
+</body>
+</html>
